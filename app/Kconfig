@@ -1,5 +1,13 @@
 source "Kconfig.zephyr"
 
+# Module 4 task ------------------------------------------------------------
+config APP_HEARTBEAT_PERIOD_MS
+    int "Heartbeat period (100-2000 ms)"
+    range 100 2000
+    default 500
+
+
+# Module 3 task (unused) ----------------------------------------------------
 menuconfig LED_SUBSYSTEM
     bool "LED Subsystem"
     default y

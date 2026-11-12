@@ -2,4 +2,9 @@
     aliases {
         app-led = &green_led_1; // The user LED for my board
     };
+
+    our_led_sensor: our_led_sensor {
+        compatible = "our,driver";
+        led-gpios = <&gpiob 0 GPIO_ACTIVE_HIGH>;
+    };
 };

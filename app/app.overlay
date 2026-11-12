@@ -1,10 +1,10 @@
 / {
     aliases {
-        app-led = &green_led_1; // The user LED for my board
+        app-led = &green_led_1; // The user LED for my board: b_l4s5i_iot01a
     };
 
     our_led_sensor: our_led_sensor {
         compatible = "our,driver";
-        led-gpios = <&gpiob 0 GPIO_ACTIVE_HIGH>;
+        led-gpios = <&gpioa 5 GPIO_ACTIVE_HIGH>;
     };
 };

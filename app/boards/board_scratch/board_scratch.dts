@@ -1,0 +1,48 @@
+/dts-v1/;
+#include<st/f4/stm32f429Xi.dtsi>
+#include<st/f4/stm32f429zitx-pinctrl.dtsi>
+#include<zephyr/dt-bindings/input/input-event-codes.h>
+
+/{
+    model="Board Scratch";
+    compatible="iomico,board-scratch";
+    chosen{
+        zephyr,console = &usart3;
+        zephyr,flash=&flash0;
+        zephyr,sram=&sram0;/* Point to regular RAM */
+    };
+};
+
+&usart3 {
+        pinctrl-0 = <&usart3_tx_pd8 &usart3_rx_pd9>;
+        pinctrl-names = "default";
+        current-speed = <115200>;
+        status = "okay";
+};
+
+&clk_lsi {
+	status = "okay";
+};
+
+&clk_hse {
+	hse-bypass;
+	clock-frequency = <DT_FREQ_M(8)>; /* STLink 8MHz clock */
+	status = "okay";
+};
+
+&pll {
+	div-m = <8>;
+	mul-n = <336>;
+	div-p = <2>;
+	div-q = <7>;
+	clocks = <&clk_hse>;
+	status = "okay";
+};
+
+&rcc {
+	clocks = <&pll>;
+	clock-frequency = <DT_FREQ_M(168)>; /* highest value to get a precise USB clock */
+	ahb-prescaler = <1>;
+	apb1-prescaler = <4>;
+	apb2-prescaler = <2>;
+};

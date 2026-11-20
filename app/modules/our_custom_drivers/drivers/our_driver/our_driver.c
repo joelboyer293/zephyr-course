@@ -55,6 +55,9 @@ static int our_driver_channel_get(const struct device *dev, enum sensor_channel 
     struct our_driver_data* data = dev->data;
     const struct our_driver_config *config = dev->config;
 
+    val->val1 = data->activated ? 1 : 0;
+    val->val2 = 0;
+
     if (data->enabled) {
         data->activated = false;
         gpio_pin_set_dt(&config->led, 0);

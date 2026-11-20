@@ -1,0 +1,55 @@
+cmake:
+  application:
+    configuration-dir: '/home/jojo/Projects/zephyr-course/tests/ring_buf'
+    source-dir: '/home/jojo/Projects/zephyr-course/tests/ring_buf'
+  board:
+    name: 'native_sim'
+    path:
+     - '/home/jojo/Projects/zephyr/zephyr/boards/native/native_sim'
+    qualifiers: 'native'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/home/jojo/Projects/zephyr/zephyr/dts/bindings'
+    files:
+     - '/home/jojo/Projects/zephyr/zephyr/boards/native/native_sim/native_sim.dts'
+    include-dirs:
+     - '/home/jojo/Projects/zephyr/modules/hal/ambiq/dts'
+     - '/home/jojo/Projects/zephyr/modules/hal/atmel/include'
+     - '/home/jojo/Projects/zephyr/modules/hal/bouffalolab/include'
+     - '/home/jojo/Projects/zephyr/modules/hal/bouffalolab/include/zephyr'
+     - '/home/jojo/Projects/zephyr/modules/hal/gigadevice/include'
+     - '/home/jojo/Projects/zephyr/modules/hal/microchip/include'
+     - '/home/jojo/Projects/zephyr/modules/hal/microchip/dts'
+     - '/home/jojo/Projects/zephyr/modules/hal/nuvoton/dts'
+     - '/home/jojo/Projects/zephyr/modules/hal/nxp/dts'
+     - '/home/jojo/Projects/zephyr/modules/hal/stm32/dts'
+     - '/home/jojo/Projects/zephyr/modules/hal/ti/dts'
+     - '/home/jojo/Projects/zephyr/zephyr/include'
+     - '/home/jojo/Projects/zephyr/zephyr/include/zephyr'
+     - '/home/jojo/Projects/zephyr/zephyr/dts/common'
+     - '/home/jojo/Projects/zephyr/zephyr/dts/vendor'
+     - '/home/jojo/Projects/zephyr/zephyr/dts/rx'
+     - '/home/jojo/Projects/zephyr/zephyr/dts/x86'
+     - '/home/jojo/Projects/zephyr/zephyr/dts/xtensa'
+     - '/home/jojo/Projects/zephyr/zephyr/dts/sparc'
+     - '/home/jojo/Projects/zephyr/zephyr/dts/riscv'
+     - '/home/jojo/Projects/zephyr/zephyr/dts/posix'
+     - '/home/jojo/Projects/zephyr/zephyr/dts/arm64'
+     - '/home/jojo/Projects/zephyr/zephyr/dts/arm'
+     - '/home/jojo/Projects/zephyr/zephyr/dts/arc'
+     - '/home/jojo/Projects/zephyr/zephyr/dts'
+  kconfig:
+    files:
+     - '/home/jojo/Projects/zephyr/zephyr/boards/native/native_sim/native_sim_defconfig'
+     - '/home/jojo/Projects/zephyr-course/tests/ring_buf/prj.conf'
+     - '/home/jojo/Projects/zephyr-course/twister-out/native_sim_native/host_gnu/zephyr-course/tests/ring_buf/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+    user-files:
+     - '/home/jojo/Projects/zephyr-course/tests/ring_buf/prj.conf'
+  toolchain:
+    name: 'host'
+    path: ''
+  zephyr:
+    version: '4.4.99'
+    zephyr-base: '/home/jojo/Projects/zephyr/zephyr'
+version: '0.1.0'
